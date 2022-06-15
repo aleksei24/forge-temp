@@ -11,13 +11,11 @@ let path = {
     libs: projectFolder + '/libs/',
     img: projectFolder + '/img/',
     fonts: projectFolder + '/fonts/',
-    json: projectFolder + '/json/',
   },
   src: {
     html: [sourceFolder + '/*.html', '!' + sourceFolder + '/template/_*.html'],
     css: sourceFolder + '/scss/style.scss',
     js: sourceFolder + '/js/main.js',
-    json: sourceFolder + '/json/*.*',
     swiper: './node_modules/swiper/swiper-bundle.min.js',
     img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
     fonts: sourceFolder + '/fonts/*.ttf',
@@ -26,7 +24,6 @@ let path = {
     html: sourceFolder + '/**/*.html',
     css: sourceFolder + '/scss/**/*.scss',
     js: sourceFolder + '/js/**/*.js',
-    json: sourceFolder + '/json/*.*',
     img: sourceFolder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
   },
   clean: './' + projectFolder + '/',
@@ -108,10 +105,6 @@ function js() {
     .pipe(browser.stream());
 }
 
-function json() {
-  return src(path.src.json).pipe(dest(path.build.json));
-}
-
 function swiperJs() {
   return src(path.src.swiper)
     .pipe(uglifyes())
@@ -177,16 +170,15 @@ function watchFiles() {
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
-  gulp.watch([path.watch.json], json);
 }
 
-function clean(params) {
+function clean() {
   return del(path.clean);
 }
 
 let libs = [swiperJs];
 
-let build = gulp.series(clean, gulp.parallel(js, json, libs, css, html, images, fonts), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, libs, css, html, images, fonts), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 // exports.script = script;
@@ -196,7 +188,6 @@ exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;
-exports.json = json;
 exports.css = css;
 exports.html = html;
 exports.build = build;
