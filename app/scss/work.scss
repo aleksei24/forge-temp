@@ -17,10 +17,12 @@
 
   &__headline {
     font-size: rem(50);
-    margin-bottom: em(40);
+    margin-bottom: em(32);
+    color: #000;
   }
 
   &__message {
     font-size: rem(42);
+    color: #000;
   }
 }
