@@ -3,7 +3,7 @@ const projectFolder = require('path').basename(__dirname),
 
 let fs = require('fs');
 
-let path = {
+const path = {
   build: {
     html: projectFolder + '/',
     css: projectFolder + '/css/',
@@ -92,7 +92,7 @@ function css() {
     .pipe(browser.stream());
 }
 
-function js() {
+async function js() {
   return src(path.src.js)
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(uglifyes())
@@ -139,7 +139,7 @@ gulp.task('otf2ttf', function () {
     .pipe(dest(sourceFolder + '/fonts/'));
 });
 
-function fontsStyle() {
+async function fontsStyle() {
   let file_content = fs.readFileSync(sourceFolder + '/scss/fonts.scss');
   if (file_content == '') {
     fs.writeFile(sourceFolder + '/scss/fonts.scss', '', cb);
@@ -165,7 +165,7 @@ function fontsStyle() {
 
 function cb() {} // callback
 
-function watchFiles() {
+async function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
@@ -176,10 +176,10 @@ function clean() {
   return del(path.clean);
 }
 
-let libs = [swiperJs];
+const libs = [swiperJs];
 
-let build = gulp.series(clean, gulp.parallel(js, libs, css, html, images, fonts), fontsStyle);
-let watch = gulp.parallel(build, watchFiles, browserSync);
+const build = gulp.series(clean, gulp.parallel(js, libs, css, html, images, fonts), fontsStyle);
+const watch = gulp.parallel(build, watchFiles, browserSync);
 
 // exports.script = script;
 exports.swiperJs = swiperJs;
