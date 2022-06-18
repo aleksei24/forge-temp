@@ -1,14 +1,10 @@
 .fullscreen {
   display: flex;
   min-height: 100vh;
-  background-image: url(../img/fullscreen/full-01.jpeg);
+  background-image: url(../img/fullscreen/smithshop.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  @media (max-width: 1000px) {
-    object-fit: cover;
-    background-position: 70% 0;
-  }
 }
 .fullscreen__container {
   display: flex;
@@ -20,9 +16,6 @@
   min-width: 100%;
   padding: 5px 15%;
   // background-color: rgba(0, 0, 0, 0.5);
-  @media (max-width: 62.5em) {
-    max-width: 95%;
-  }
 }
 .fullscreen__headline {
   width: 100%;
@@ -40,14 +33,6 @@
       // font-size: calc(rem(24) + (70 - 24) * (100vw - 320px) / (1520 - 320));
       // min-font-size + (max-font-size - min-font-size) * (full-viewport - min-media-query) / (media-query start changes from - min-media-query)
 ;
-  }
-  @media (max-width: $md3) {
-    max-width: calc(100vw - 50%);
-    // font-size: 3.5rem;
-  }
-  @media (max-width: $md5) {
-    max-width: calc(100vw - 10%);
-    // font-size: 2.5rem;
   }
 }
 .fullscreen__text {
