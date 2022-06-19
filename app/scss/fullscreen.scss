@@ -16,18 +16,19 @@
   padding-top: em(150);
 }
 .fullscreen__headline {
-  max-width: em(400);
-  font-size: rem(52);
-  line-height: rem(63);
+  max-width: em(200);
+  @include adapt(font-size, 52, 21, 1);
+  @include adapt(line-height, 63, 36, 1);
   overflow: hidden;
   font-family: $secondFont;
   text-transform: uppercase;
 }
 .fullscreen__text {
-  max-height: em(170);
+  max-height: em(180);
   max-width: em(400);
-  overflow: hidden;
+  overflow-y: scroll;
   font-family: $fontFamily;
+  @include adapt(font-size, 24, 14, 1);
   margin: em(30) 0 em(70) 0;
 }
 .fullscreen__btn {
@@ -35,11 +36,11 @@
   box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.5);
 }
 .btn_main {
-  width: em(250);
-  height: em(50);
+  @include adapt(width, 250, 180, 1);
+  @include adapt(height, 50, 30, 1);
   color: $btnColour;
   background-color: $btnBgColour;
-  font-size: rem(20);
+  @include adapt(font-size, 20, 14, 1);
   line-height: rem(24);
   text-transform: uppercase;
   letter-spacing: 1.4px;

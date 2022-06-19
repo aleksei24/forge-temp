@@ -21,8 +21,7 @@
 
   &__logo {
     display: inline-block;
-    font-size: rem(56);
-    @include adapt(font-size, 56, 32, 1);
+    @include adapt(font-size, 56, 24, 1);
     text-transform: uppercase;
   }
 
@@ -32,7 +31,17 @@
     align-items: flex-start;
     max-width: em(210);
     font-size: rem(16);
-    @media (max-width: $md5) {
+    @media (max-width: em(1300)) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    display: block;
+    height: em(48);
+    width: em(48);
+    margin-left: em(10);
+    @media (min-width: em(1300)) {
       display: none;
     }
   }
@@ -52,7 +61,7 @@
 }
 
 .nav {
-  @media (max-width: $md4) {
+  @media (max-width: $md3) {
     display: none;
   }
   &__list {

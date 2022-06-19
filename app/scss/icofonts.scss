@@ -1,21 +1,22 @@
 @font-face {
   font-family: 'icomoon';
-  //     src: url('fonts/icomoon.eot?w7fpjl');
-  src: url('../fonts/icomoon.eot') format('embedded-opentype'),
-    //         url('fonts/icomoon.ttf?w7fpjl') format('truetype'),
-    url('../fonts/icomoon.woff') format('woff'),
-    url('../fonts/icomoon.svg') format('svg');
+  src: url('../fonts/icomoon.eot?26rntu#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?26rntu') format('woff'),
+    url('../fonts/icomoon.svg?26rntu#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
-[class^='icon-']::before,
-[class*=' icon-']::before {
-  //     /* use !important to prevent issues with browser extensions that change fonts */
+[class^='_icon-']::before,
+[class*=' _icon-']::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
 }
 
-.icon-logo::before {
-  content: '\e900';
+._icon-phone:before {
+  content: '\e942';
   display: inline-block;
-  font-size: 3.125rem;
-  color: green;
+  font-size: 3rem;
+  color: #fff;
 }
