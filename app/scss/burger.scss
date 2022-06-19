@@ -8,7 +8,8 @@
     }
 
     .list-burger__logo {
-      width: 60px;
+      width: em(60);
+      height: em(60);
       margin: 0 auto;
       border-radius: 100%;
       overflow: hidden;

@@ -9,63 +9,39 @@
 .fullscreen__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex: 1 1 auto;
-  // max-width: 1170px;
   min-width: 100%;
-  padding: 5px 15%;
-  // background-color: rgba(0, 0, 0, 0.5);
+  padding-top: em(150);
 }
 .fullscreen__headline {
-  width: 100%;
-  max-width: calc(100vw - 85%);
-  color: rgb(226, 157, 29);
-  // @include response-font(70, 24);
-  font-size: 4.375rem;
-  font-weight: 700;
+  max-width: em(400);
+  font-size: rem(52);
+  line-height: rem(63);
+  overflow: hidden;
+  font-family: $secondFont;
   text-transform: uppercase;
-  span {
-    color: rgb(39, 206, 39);
-  }
-  @media (max-width: $md2) {
-    @include adapt(font-size, 70, 24, 1)
-      // font-size: calc(rem(24) + (70 - 24) * (100vw - 320px) / (1520 - 320));
-      // min-font-size + (max-font-size - min-font-size) * (full-viewport - min-media-query) / (media-query start changes from - min-media-query)
-;
-  }
 }
 .fullscreen__text {
-  max-width: 20em;
-  max-height: 1.875em;
+  max-height: em(170);
+  max-width: em(400);
   overflow: hidden;
-  color: #ffffff;
-  // @include response-font(14, 10);
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 1.4px;
-  margin: 30px 0 89px 0;
-  @media (max-width: 1000px) {
-    margin: 30px 0;
-  }
+  font-family: $fontFamily;
+  margin: em(30) 0 em(70) 0;
 }
 .fullscreen__btn {
   align-self: start;
+  box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.5);
 }
 .btn_main {
-  width: 169px;
-  height: 46px;
+  width: em(250);
+  height: em(50);
   color: $btnColour;
   background-color: $btnBgColour;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 30px;
+  font-size: rem(20);
+  line-height: rem(24);
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  @media (max-width: $md3) {
-    width: calc(120px + (169 - 120) * (100vw - 320px) / (992 - 320));
-    height: 30px;
-    font-size: 12px;
-  }
+  border-radius: em(50);
 }

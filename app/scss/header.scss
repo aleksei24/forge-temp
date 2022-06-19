@@ -76,6 +76,10 @@
   }
 }
 
+.address-header__address {
+  @include adapt(font-size, 16, 12, 1);
+}
+
 .address-header__wapp > span,
 .address-header__phone > span {
   font-family: $secondFont;
