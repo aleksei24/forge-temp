@@ -1,0 +1,52 @@
+.partners {
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__list {
+    max-width: em(1100);
+    margin: em(-100) auto em(50);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(em(320), 1fr));
+    gap: em(15);
+    @media (max-width: em(1200)) {
+      grid-template-columns: repeat(2, minmax(em(480), 1fr));
+    }
+    @media (max-width: $md3) {
+      grid-template-columns: repeat(1, 1fr);
+      margin: em(50) auto;
+    }
+  }
+}
+
+.top-partners {
+  &__left {
+    flex: 0 1 auto;
+    @media (max-width: $md3) {
+      @include adapt(flex-basis, 420, 240, 1);
+    }
+  }
+  &__right {
+    flex: 0 1 auto;
+    @media (max-width: $md3) {
+      @include adapt(flex-basis, 420, 240, 1);
+    }
+  }
+  &__title {
+    @include adapt(font-size, 42, 24, 1);
+    @include adapt(line-height, 50, 30, 1);
+    text-align: center;
+  }
+}
+
+.list-partners {
+  &__item {
+    flex: 0 1 em(160);
+    height: em(100);
+    text-align: center;
+    @include adapt(font-size, 30, 14, 1);
+    @include adapt(line-height, 36, 21, 1);
+  }
+}

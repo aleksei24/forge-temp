@@ -17,11 +17,13 @@
 
   &__image {
     flex: 0 0 em(670);
+    height: auto;
     @media (max-width: $md3) {
-      padding-top: em(20);
-    }
-    @media (max-width: 568px) {
       flex: 1 1 auto;
+      margin-top: em(30);
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -37,12 +39,12 @@
 
   &__text {
     margin-bottom: em(15);
-    font-size: rem(24);
-    line-height: rem(30);
+    @include adapt(font-size, 24, 16, 1);
+    @include adapt(line-height, 30, 21, 1);
   }
 
   &__item {
-    font-size: rem(24);
-    line-height: rem(30);
+    @include adapt(font-size, 24, 16, 1);
+    @include adapt(line-height, 30, 21, 1);
   }
 }
