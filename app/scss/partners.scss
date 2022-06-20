@@ -9,13 +9,9 @@
     max-width: em(1100);
     margin: em(-100) auto em(50);
     display: grid;
-    grid-template-columns: repeat(3, minmax(em(320), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(em(320), 1fr));
     gap: em(15);
-    @media (max-width: em(1200)) {
-      grid-template-columns: repeat(2, minmax(em(480), 1fr));
-    }
     @media (max-width: $md3) {
-      grid-template-columns: repeat(1, 1fr);
       margin: em(50) auto;
     }
   }
