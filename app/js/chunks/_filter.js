@@ -1,67 +1,296 @@
-// filter
-
-const catalogFilterItems = document.querySelectorAll('.catalogue-filter__item');
-const catalogChoice = document.querySelector('.catalogue-choice');
-
-const createChoiceItem = (txt) => {
-  return `
-        <a href="#!" class="catalogue-choice__btn" data-choice-txt="${txt}">
-        ${txt}
-        <span></span>
-    </a>
-        `;
-};
-
-if (catalogFilterItems) {
-  catalogFilterItems.forEach((elem) => {
-    elem.querySelector('input').addEventListener('change', (e) => {
-      let checked = elem.querySelector('input').checked;
-      if (checked) {
-        elem.querySelector('.checkbox__box').classList.add('checkbox__box_mark');
-        let text = elem.querySelector('.checkbox__text').textContent;
-        catalogChoice.insertAdjacentHTML('afterbegin', createChoiceItem(text));
-      } else {
-        elem.querySelector('.checkbox__box').classList.remove('checkbox__box_mark');
-        let text = elem.querySelector('.checkbox__text').textContent;
-        document.querySelector(`[data-choice-txt="${text}"]`).remove();
-      }
-
-      let activeCheckbox = document.querySelectorAll('.checkbox__box_mark');
-      if (activeCheckbox.length > 0) {
-        catalogChoice.style.display = 'flex';
-      } else {
-        catalogChoice.style.display = 'none';
-      }
-    });
-  });
-}
-
-if (catalogChoice) {
-  catalogChoice.addEventListener('click', (e) => {
-    if (e.target.classList.contains('catalogue-choice__btn')) {
-      e.target.remove();
-
-      let choiceText = e.target.textContent.trim();
-
-      document.querySelector(`[data-txt="${choiceText}"]`).querySelector('input').checked = false;
-      document.querySelector(`[data-txt="${choiceText}"]`).classList.remove('checkbox__box_mark');
-    }
-
-    if (e.target.classList.contains('catalogue-choice__clear')) {
-      Array.from(e.currentTarget.children).forEach(function (elem) {
-        if (!elem.classList.contains('catalogue-choice__clear')) {
-          elem.remove();
-        }
-        catalogFilterItems.forEach((elem) => {
-          elem.querySelector('input').checked = false;
-          elem.querySelector('.checkbox__box').classList.remove('checkbox__box_mark');
-        });
-      });
-      e.currentTarget.style.display = 'none';
-    }
-
-    if (e.currentTarget.children.length === 1) {
-      e.currentTarget.style.display = 'none';
-    }
-  });
-}
+const gridItems = [
+  {
+    id: 01,
+    title: 'koz 01',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-01.png',
+  },
+  {
+    id: 02,
+    title: 'koz 02',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-02.png',
+  },
+  {
+    id: 03,
+    title: 'koz 03',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-03.jpg',
+  },
+  {
+    id: 04,
+    title: 'koz 04',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-04.jpg',
+  },
+  {
+    id: 05,
+    title: 'koz 05',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-05.jpg',
+  },
+  {
+    id: 06,
+    title: 'koz 06',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-06.jpg',
+  },
+  {
+    id: 07,
+    title: 'koz 07',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-07.jpg',
+  },
+  {
+    id: 08,
+    title: 'koz 08',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-08.jpg',
+  },
+  {
+    id: 09,
+    title: 'koz 09',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-09.jpg',
+  },
+  {
+    id: 010,
+    title: 'koz 10',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-10.jpg',
+  },
+  {
+    id: 011,
+    title: 'koz 11',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-11.jpg',
+  },
+  {
+    id: 012,
+    title: 'koz 12',
+    category: 'koz',
+    img: '/forge-temp/app/img/grid/koz/koz-12.jpg',
+  },
+  {
+    id: 101,
+    title: 'naves 01',
+    category: 'naves',
+    img: '/forge-temp/app/img/grid/naves/n-01.jpg',
+  },
+  {
+    id: 102,
+    title: 'naves 02',
+    category: 'naves',
+    img: '/forge-temp/app/img/grid/naves/n-02.jpg',
+  },
+  {
+    id: 103,
+    title: 'naves 03',
+    category: 'naves',
+    img: '/forge-temp/app/img/grid/naves/n-03.jpg',
+  },
+  {
+    id: 104,
+    title: 'naves 04',
+    category: 'naves',
+    img: '/forge-temp/app/img/grid/naves/n-04.jpg',
+  },
+  {
+    id: 105,
+    title: 'naves 05',
+    category: 'naves',
+    img: '/forge-temp/app/img/grid/naves/n-05.jpg',
+  },
+  {
+    id: 106,
+    title: 'naves 06',
+    category: 'naves',
+    img: '/forge-temp/app/img/grid/naves/n-06.jpg',
+  },
+  {
+    id: 107,
+    title: 'naves 07',
+    category: 'naves',
+    img: '/forge-temp/app/img/grid/naves/n-07.jpg',
+  },
+  {
+    id: 201,
+    title: 'bes 01',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-01.jpg',
+  },
+  {
+    id: 202,
+    title: 'bes 02',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-02.jpg',
+  },
+  {
+    id: 203,
+    title: 'bes 03',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-03.jpg',
+  },
+  {
+    id: 204,
+    title: 'bes 04',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-04.jpg',
+  },
+  {
+    id: 205,
+    title: 'bes 05',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-05.jpg',
+  },
+  {
+    id: 206,
+    title: 'bes 06',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-06.jpg',
+  },
+  {
+    id: 207,
+    title: 'bes 07',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-07.jpg',
+  },
+  {
+    id: 208,
+    title: 'bes 08',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-08.jpg',
+  },
+  {
+    id: 209,
+    title: 'bes 09',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-09.jpg',
+  },
+  {
+    id: 210,
+    title: 'bes 10',
+    category: 'besed',
+    img: '/forge-temp/app/img/grid/besed/b-10.jpg',
+  },
+  {
+    id: 301,
+    title: 'gate 01',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-01.jpg',
+  },
+  {
+    id: 302,
+    title: 'gate 02',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-02.jpg',
+  },
+  {
+    id: 303,
+    title: 'gate 03',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-03.jpg',
+  },
+  {
+    id: 304,
+    title: 'gate 04',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-04.jpg',
+  },
+  {
+    id: 305,
+    title: 'gate 05',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-05.jpg',
+  },
+  {
+    id: 306,
+    title: 'gate 06',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-06.jpg',
+  },
+  {
+    id: 307,
+    title: 'gate 07',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-07.jpg',
+  },
+  {
+    id: 308,
+    title: 'gate 08',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-08.jpg',
+  },
+  {
+    id: 309,
+    title: 'gate 09',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-09.jpg',
+  },
+  {
+    id: 310,
+    title: 'gate 10',
+    category: 'gate',
+    img: '/forge-temp/app/img/grid/gate/g-10.jpg',
+  },
+  {
+    id: 401,
+    title: 'resh 01',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-01.jpg',
+  },
+  {
+    id: 402,
+    title: 'resh 02',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-02.jpg',
+  },
+  {
+    id: 403,
+    title: 'resh 03',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-03.jpg',
+  },
+  {
+    id: 404,
+    title: 'resh 04',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-04.jpg',
+  },
+  {
+    id: 405,
+    title: 'resh 05',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-05.jpg',
+  },
+  {
+    id: 406,
+    title: 'resh 06',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-06.jpg',
+  },
+  {
+    id: 407,
+    title: 'resh 07',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-07.jpg',
+  },
+  {
+    id: 408,
+    title: 'resh 08',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-08.jpg',
+  },
+  {
+    id: 409,
+    title: 'resh 09',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-09.jpg',
+  },
+  {
+    id: 410,
+    title: 'resh 10',
+    category: 'resh',
+    img: '/forge-temp/app/img/grid/resh/r-10.jpg',
+  },
+];
