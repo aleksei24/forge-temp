@@ -107,13 +107,6 @@ button {
   margin: 0 auto;
   background-color: $bgColour;
 }
-.wrapper-grid {
-  min-height: 100%;
-  display: -ms-grid;
-  display: grid;
-  grid-template: minmax(em(100), auto) 1fr minmax(em(70), auto) / 1fr;
-  grid-template-areas: 'header-grid' 'main-grid' 'footer-grid';
-}
 .container {
   max-width: $contWidth;
   width: 100%;
