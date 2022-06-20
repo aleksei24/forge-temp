@@ -3,11 +3,13 @@
 @import 'mixins';
 @import 'default';
 @import 'burger';
-@import 'header';
-@import 'fullscreen';
-@import 'about';
-@import 'partners';
-@import 'catalogue';
+
+// @import 'header';
+// @import 'fullscreen';
+// @import 'about';
+// @import 'partners';
+// @import 'catalogue';
+
 // @import 'hero';
 // @import 'side-popup';
 // @import 'banner';
@@ -47,4 +49,4 @@
 // @import 'own-counter';
 // @import 'main-grid';
 // @import 'infinite-scroll-css';
-// @import 'work';
+@import 'work';
