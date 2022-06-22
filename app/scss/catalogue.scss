@@ -10,13 +10,20 @@
   }
 
   &__buttons {
+    margin-bottom: em(40);
+    display: grid;
+    gap: em(40);
   }
 
   &__display {
+    display: grid;
+    gap: em(20);
   }
 }
 
 .buttons-catalogue {
+  grid-template-columns: repeat(auto-fit, minmax(em(150), 1fr));
 }
 .display-catalogue {
+  grid-template-columns: repeat(auto-fit, minmax(em(220), 1fr));
 }
