@@ -7,7 +7,57 @@ const gridItems = [
   {
     title: 'koz 02',
     category: 'koz',
-    img: '../img/grid/koz/koz-02.webp',
+    img: 'img/grid/koz/koz-02.webp',
+  },
+  {
+    title: 'koz 03',
+    category: 'koz',
+    img: 'img/grid/koz/koz-03.webp',
+  },
+  {
+    title: 'koz 04',
+    category: 'koz',
+    img: 'img/grid/koz/koz-04.webp',
+  },
+  {
+    title: 'koz 05',
+    category: 'koz',
+    img: 'img/grid/koz/koz-05.webp',
+  },
+  {
+    title: 'koz 06',
+    category: 'koz',
+    img: 'img/grid/koz/koz-06.webp',
+  },
+  {
+    title: 'koz 07',
+    category: 'koz',
+    img: 'img/grid/koz/koz-07.webp',
+  },
+  {
+    title: 'koz 08',
+    category: 'koz',
+    img: 'img/grid/koz/koz-08.webp',
+  },
+  {
+    title: 'koz 09',
+    category: 'koz',
+    img: 'img/grid/koz/koz-09.webp',
+  },
+  {
+    title: 'koz 10',
+    category: 'koz',
+    img: 'img/grid/koz/koz-10.webp',
+  },
+  {
+    title: 'koz 11',
+    category: 'koz',
+    img: 'img/grid/koz/koz-11.webp',
+  },
+  {
+    title: 'koz 12',
+    category: 'koz',
+    img: 'img/grid/koz/koz-12.webp',
   },
   {
     title: 'naves 01',
