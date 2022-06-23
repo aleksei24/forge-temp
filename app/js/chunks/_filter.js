@@ -164,6 +164,11 @@ function displayChoiceButtons() {
           return item;
         }
       });
+      if (itemsCategory === 'all') {
+        displayGridCatalogue(gridItems);
+      } else {
+        displayGridCatalogue(buttonsCategory);
+      }
     });
   });
 }
