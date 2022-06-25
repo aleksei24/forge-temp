@@ -24,9 +24,12 @@
   text-transform: uppercase;
 }
 .fullscreen__text {
-  max-height: em(180);
+  max-height: em(175);
+  height: 100%;
   max-width: em(400);
-  overflow-y: scroll;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  white-space: pre-line;
   font-family: $fontFamily;
   @include adapt(font-size, 24, 14, 1);
   margin: em(30) 0 em(70) 0;

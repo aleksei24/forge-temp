@@ -60,7 +60,7 @@ body {
   margin: 0;
   list-style-type: none;
   text-decoration: none;
-  // outline: 1px solid red;
+  outline: 1px solid red;
 }
 a {
   text-decoration: none;
@@ -121,15 +121,15 @@ button {
   background-repeat: no-repeat;
   position: relative;
 }
-.ibg img {
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
-}
+// .ibg img {
+//   width: 0;
+//   height: 0;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   opacity: 0;
+//   visibility: hidden;
+// }
 
 .copyright {
   &::before {

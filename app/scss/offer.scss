@@ -1,0 +1,67 @@
+.offer {
+  background-image: url(../img/offer/bg.jpg);
+  height: em(620);
+  @media (max-width: $md5) {
+    height: em(750);
+  }
+  &__container {
+    padding: em(68) 0;
+  }
+
+  &__headline {
+    @include adapt(font-size, 42, 21, 1);
+    @include adapt(line-height, 51, 27, 1);
+    text-align: center;
+    margin-bottom: em(25);
+  }
+
+  &__items {
+    max-width: em(990);
+    height: em(380);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $md4) {
+      flex-wrap: wrap;
+      gap: em(20);
+      align-items: center;
+      justify-content: center;
+      height: auto;
+    }
+  }
+}
+
+.items-offer {
+  &__item {
+    @include adapt(height, 230, 170, 1);
+    @include adapt(width, 290, 170, 1);
+    border-radius: em(25);
+    background-color: rgba(24, 23, 21, 0.6);
+    padding: em(22) em(36);
+    @include adapt(padding-top, 22, 12, 1);
+    @include adapt(padding-bottom, 22, 12, 1);
+    @include adapt(padding-left, 36, 12, 1);
+    @include adapt(padding-right, 36, 12, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:nth-child(odd) {
+      align-self: self-end;
+    }
+  }
+
+  &__image {
+    @include adapt(height, 144, 60, 1);
+    @include adapt(width, 144, 60, 1);
+    margin-bottom: em(8);
+  }
+
+  &__title {
+    width: em(145);
+    height: em(35);
+    @include adapt(font-size, 28, 14, 1);
+    line-height: em(34);
+    text-align: center;
+    overflow-y: hidden;
+  }
+}
