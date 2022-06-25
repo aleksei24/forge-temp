@@ -60,7 +60,7 @@
     width: em(145);
     height: em(35);
     @include adapt(font-size, 28, 14, 1);
-    line-height: em(34);
+    line-height: em(32);
     text-align: center;
     overflow-y: hidden;
   }
