@@ -1,5 +1,9 @@
 .contacts {
   &__container {
+    padding: em(10) em(34);
+    @media (max-width: $md4) {
+      padding: em(30);
+    }
   }
 
   &__headline {
@@ -12,24 +16,41 @@
   &__main {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
+    @media (max-width: $md4) {
+      flex-direction: column;
+    }
   }
 }
 
 .main-contacts {
   &__text {
-    flex: 0 0 em(600);
+    flex: 0 1 em(600);
+    @media (max-width: $md4) {
+      flex: 1 1 auto;
+      padding-bottom: em(20);
+    }
   }
 
   &__address {
+    @include adapt(font-size, 24, 12, 1);
+    @include adapt(line-height, 30, 18, 1);
   }
 
   &__wapp {
+    @include adapt(font-size, 24, 12, 1);
+    @include adapt(line-height, 30, 18, 1);
   }
 
   &__phone {
+    @include adapt(font-size, 24, 12, 1);
+    @include adapt(line-height, 30, 18, 1);
   }
 
   &__image {
     flex: 0 1 em(740);
+    @media (max-width: $md4) {
+      flex: 1 1 auto;
+    }
   }
 }
