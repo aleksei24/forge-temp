@@ -45,7 +45,7 @@ body {
   // it allows font-size to be changed by partially blind people
   background-color: $bgColour;
   font-family: $fontFamily;
-  &.lock {
+  &.locked {
     overflow: hidden;
   }
 }
