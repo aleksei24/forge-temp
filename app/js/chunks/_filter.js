@@ -554,10 +554,12 @@ const gridItems = [
 const displayCatalogue = document.querySelector('.display-catalogue');
 const btnsCatalogue = document.querySelector('.buttons-catalogue');
 
-window.addEventListener('DOMContentLoaded', () => {
-  displayGridCatalogue(gridItems);
-  displayChoiceButtons();
-});
+if (displayCatalogue && btnsCatalogue) {
+  window.addEventListener('DOMContentLoaded', () => {
+    displayGridCatalogue(gridItems);
+    displayChoiceButtons();
+  });
+}
 
 function displayGridCatalogue(gridItems) {
   let display = gridItems.map((item) => {
