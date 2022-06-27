@@ -1,11 +1,31 @@
 .catalogue-link {
   &__container {
-    height: auto;
+    height: em(150);
+    padding: em(20) em(10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__title {
     font-size: rem(42);
     line-height: rem(50);
-    text-align: center;
-    margin-bottom: em(30);
+    animation-name: attractlink;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes attractlink {
+  from {
+    transform: scale(90%);
+    box-shadow: em(0) em(0) em(4) em(0) white;
+  }
+  50% {
+    transform: scale(100%);
+    box-shadow: em(0) em(0) em(16) em(2) white;
+  }
+  to {
+    transform: scale(90%);
+    box-shadow: em(0) em(0) em(4) em(0) white;
   }
 }
