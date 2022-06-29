@@ -30,8 +30,7 @@
   &__body {
     flex: 1 1 auto;
     padding-right: em(20);
-    max-height: em(350);
-    overflow-y: scroll;
+    overflow-y: hidden;
     @media (max-width: $md3) {
       padding-right: 0;
     }
