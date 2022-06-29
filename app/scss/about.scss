@@ -1,9 +1,12 @@
 .about {
-  padding: em(90) 0;
+  @include adapt(padding-top, 90, 21, 1);
+  @include adapt(padding-bottom, 90, 16, 1);
+  padding-left: 0;
+  padding-right: 0;
 
   &__headline {
     text-align: center;
-    padding-bottom: em(70);
+    @include adapt(padding-bottom, 70, 24, 1);
     font-size: rem(42);
     line-height: rem(50);
   }
