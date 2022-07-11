@@ -25,12 +25,18 @@
   padding-bottom: em(30);
 }
 .fullscreen__text {
-  flex: 0 0 em(175);
+  // flex: 0 0 em(175);
+  max-height: em(78);
   max-width: em(600);
   width: 100%;
   overflow-y: hidden;
   font-family: $fontFamily;
   @include adapt(font-size, 24, 12, 1);
+  transition: all 0.3s ease;
+  &:hover {
+    overflow-y: scroll;
+    max-height: em(175);
+  }
 }
 .fullscreen__btn {
   margin-top: em(70);
